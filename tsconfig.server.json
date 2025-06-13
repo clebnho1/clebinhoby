@@ -1,0 +1,46 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["node"],
+    "allowJs": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "moduleTypes": {
+      "**/*.ts": "esm",
+      "**/*.tsx": "esm"
+    },
+    "transpileOnly": true
+  }
+}
